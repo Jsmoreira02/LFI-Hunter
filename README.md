@@ -1,6 +1,6 @@
 <div><center>
 
-  <img src="https://github.com/Jsmoreira02/LFI-Hunter/assets/103542430/d8c5f069-7a57-4357-a488-90a995ce5a1f"></br>
+  <img src="https://github.com/Jsmoreira02/LFI-Hunter/assets/103542430/3b9e846a-f2dd-44a9-8329-0bcf7eabacfd"></br>
   
 </center></div>
 
