@@ -22,7 +22,7 @@ Simple Automated brute force attack tool for exploiting local file inclusion, us
 
 - The script will use all the most commonly used techniques to bypass a filtering system or protections on the potentially vulnerable target and will show all successful payloads. If you know of an additional more effective technique, feel free to modify the code or add other payloads.
 
-![video](https://github.com/Jsmoreira02/LFI-Hunter/assets/103542430/87b88afd-2f54-40b8-96fd-14bc513913c3)
+![video](https://github.com/Jsmoreira02/LFI-Hunter/assets/103542430/4df2df13-d3a9-4421-a755-36f40370d21a)
 
 ## Optionals:
 
