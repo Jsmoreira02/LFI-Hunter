@@ -8,6 +8,21 @@ from time import sleep
 disable_warnings(exceptions.InsecureRequestWarning)
 spinner_event = Event()
 
+def arguments():
+    
+    parser = ArgumentParser(
+        description='Automated search for "Local File Inclusion" vulnerabilities so you can relax',
+        epilog="./app.py http://127.0.0.1/ page" 
+    )
+    parser.add_argument("url", metavar="<Target URL>", type=str, help="URL path of page containing potential LFI vulnerability")
+    parser.add_argument("parameter", metavar="<URL Parameters>", type=str, help="Vulnerable Parameter To exploit LFI")
+    parser.add_argument("-o", "--output", action='store_true', help="Show Results")
+    parser.add_argument("-s", "--saveToFile", type=str, metavar="", help="Save your results to a file")
+
+    args = parser.parse_args()
+
+    return args.url, args.parameter, args.output, args.saveToFile
+
 
 def logo():
 
@@ -242,18 +257,8 @@ def main():
     cyan = "\x1b[1;36m"
     reset = "\x1b[0m"
 
-    parser = ArgumentParser(
-        description='Automated search for "Local File Inclusion" vulnerabilities so you can relax',
-        epilog="./app.py http://127.0.0.1/ page" 
-    )
-    parser.add_argument("url", metavar="<Target URL>", type=str, help="URL path of page containing potential LFI vulnerability")
-    parser.add_argument("parameter", metavar="<URL Parameters>", type=str, help="Vulnerable Parameter To exploit LFI")
-    parser.add_argument("-o", "--output", action='store_true', help="Show Results")
-    parser.add_argument("-s", "--saveToFile", type=str, metavar="", help="Save your results to a file")
-
-    args = parser.parse_args()
-    url, parameter, output, save = args.url, args.parameter, args.output, args.saveToFile
-
+    url, parameter, output, save = arguments()
+    
     if "/" != url[-1]:
         url + "/"
     else:
